@@ -7,7 +7,7 @@ soup = bs4.BeautifulSoup(response,'html.parser')
 
 ranks = soup.select('#rankingChart > ul > li')
 
-with open('naverkin_rank.csv','w') as f:
+with open('rank.csv','w') as f:
     for rank in ranks:
         num = rank.select_one('span.no').text
         subject = rank.select_one('a.ranking_title').text
